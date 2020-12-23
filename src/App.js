@@ -7,10 +7,15 @@ import {
   Link
 } from "react-router-dom";
 
+import CountdownTimer from './components/CountdownTimer';
+
 
 const Main = styled.div`
   height: 100vh;
   width: 100vw;
+`
+const CountdownTimerContainer = styled.div`
+  font-size: 2.5rem;
 `
 
 function App() {
@@ -43,6 +48,9 @@ function App() {
               <h1>
                 Pomodoro Timer
               </h1>
+              <CountdownTimerContainer>
+                <CountdownTimer />
+              </CountdownTimerContainer>
             </Main>
           </Route>
         </Switch>
