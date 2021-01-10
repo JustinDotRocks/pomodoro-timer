@@ -3,17 +3,18 @@ import styled from 'styled-components';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
-import CountdownTimer from './components/CountdownTimer';
+import CountdownTimer from './components/TimerSettings';
+import Navbar from './components/navbar/Navbar';
 
 
 const Main = styled.div`
   height: 100vh;
   width: 100vw;
 `
+
 const CountdownTimerContainer = styled.div`
   font-size: 2.5rem;
 `
@@ -22,17 +23,7 @@ function App() {
   return (
     <Router>
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/settings">Settings</Link>
-            </li>
-          </ul>
-        </nav>
-
+        <Navbar />
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
@@ -41,6 +32,9 @@ function App() {
               <h1>
                 Settings
               </h1>
+              <CountdownTimerContainer>
+                <CountdownTimer />
+              </CountdownTimerContainer>
             </Main>
           </Route>
           <Route path="/">
@@ -48,9 +42,6 @@ function App() {
               <h1>
                 Pomodoro Timer
               </h1>
-              <CountdownTimerContainer>
-                <CountdownTimer />
-              </CountdownTimerContainer>
             </Main>
           </Route>
         </Switch>
@@ -60,4 +51,3 @@ function App() {
 }
 
 export default App;
-
