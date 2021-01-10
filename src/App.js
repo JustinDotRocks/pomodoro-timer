@@ -16,7 +16,7 @@ const NavBarContainer = styled.nav`
 
   height: 35px;
 
-  border-bottom: 3px solid orange;
+  border-bottom: 3px solid #008894;
 
 `
 
@@ -31,7 +31,7 @@ const NavItem = styled.li`
 
   > * {
     text-decoration: none;
-    color: orange;
+    color: white;
   }
 `
 
