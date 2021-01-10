@@ -7,8 +7,33 @@ import {
   Link
 } from "react-router-dom";
 
-import CountdownTimer from './components/CountdownTimer';
+import CountdownTimer from './components/TimerSettings';
 
+const NavBarContainer = styled.nav`
+  background-color: #0089aa;
+  display: flex;
+  align-items: center;
+
+  height: 35px;
+
+  border-bottom: 3px solid orange;
+
+`
+
+const NavItemsList = styled.ul`
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+
+`
+const NavItem = styled.li`
+  margin-left: 1.2rem;
+
+  > * {
+    text-decoration: none;
+    color: orange;
+  }
+`
 
 const Main = styled.div`
   height: 100vh;
@@ -22,16 +47,16 @@ function App() {
   return (
     <Router>
       <div>
-        <nav>
-          <ul>
-            <li>
+        <NavBarContainer>
+          <NavItemsList>
+            <NavItem>
               <Link to="/">Home</Link>
-            </li>
-            <li>
+            </NavItem>
+            <NavItem>
               <Link to="/settings">Settings</Link>
-            </li>
-          </ul>
-        </nav>
+            </NavItem>
+          </NavItemsList>
+        </NavBarContainer>
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
@@ -41,6 +66,9 @@ function App() {
               <h1>
                 Settings
               </h1>
+              <CountdownTimerContainer>
+                <CountdownTimer />
+              </CountdownTimerContainer>
             </Main>
           </Route>
           <Route path="/">
@@ -48,9 +76,7 @@ function App() {
               <h1>
                 Pomodoro Timer
               </h1>
-              <CountdownTimerContainer>
-                <CountdownTimer />
-              </CountdownTimerContainer>
+              
             </Main>
           </Route>
         </Switch>
