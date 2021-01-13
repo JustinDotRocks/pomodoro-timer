@@ -4,7 +4,8 @@ import styled from 'styled-components';
 import {
     decrement,
     increment,
-    selectTime
+    selectTime,
+    timerCountdown
   } from './timerSlice'
 
 const TimerButtonContainer = styled.div`
@@ -31,10 +32,7 @@ const TimerContainer = styled.div`
     font-size: x-large;
     color: #0089aa;
 `
-const getFormattedTime = (seconds) => {
-    return `${String(Math.floor(seconds / 60)).padStart(2, '0')}:${String(seconds % 60).padStart(2, '0')}`;
 
-}
 
 const Timer = () => {
     const timeRemaining = useSelector(selectTime)
@@ -46,9 +44,7 @@ const Timer = () => {
                 +
             </TimerButton>
             <TimerContainer>
-                <span>{getFormattedTime()}</span>
                 <span>{timeRemaining}</span>
-
             </TimerContainer>
             <TimerButton onClick={() => dispatch(decrement())}>
                 -

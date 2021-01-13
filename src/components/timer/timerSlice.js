@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const pomodoro = 25;
+const pomodoro = 1500;
 
 export const timerSlice = createSlice({
     name: 'timer',
@@ -14,7 +14,7 @@ export const timerSlice = createSlice({
         decrement: state => {
             state.value -= 1
         },
-        incrementByAmount: (state, action) => {
+        timerCountdown: (state, action) => {
             state.value += action.payload
         }
     }
@@ -23,6 +23,6 @@ export const timerSlice = createSlice({
 
 export const selectTime = state => state.timer.value;
 
-export const { increment, decrement, incrementByAmount } = timerSlice.actions;
+export const { increment, decrement, timerCountdown } = timerSlice.actions;
 
 export default timerSlice.reducer;
