@@ -32,6 +32,9 @@ const Navbar = () => {
           <Link to="/">Home</Link>
         </NavItem>
         <NavItem>
+          <Link to="/counter">Counter</Link>
+        </NavItem>
+        <NavItem>
           <Link to="/settings">Settings</Link>
         </NavItem>
       </NavItemsList>

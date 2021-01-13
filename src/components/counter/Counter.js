@@ -10,6 +10,7 @@ import {
 const CounterButtonContainer = styled.div`
     display: flex;
     align-items: center;
+    justify-content: center;
 `
 const CounterButton = styled.button`
     margin: 1rem;
