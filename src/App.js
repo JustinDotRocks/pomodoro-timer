@@ -8,7 +8,7 @@ import {
 
 import CountdownTimer from './components/TimerSettings';
 import Navbar from './components/navbar/Navbar';
-
+import Counter from './components/counter/Counter';
 
 const Main = styled.div`
   height: 100vh;
@@ -42,6 +42,7 @@ function App() {
               <h1>
                 Pomodoro Timer
               </h1>
+              <Counter />
             </Main>
           </Route>
         </Switch>
