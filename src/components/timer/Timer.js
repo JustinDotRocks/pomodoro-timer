@@ -2,8 +2,6 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components';
 import {
-    decrement,
-    increment,
     selectTime,
     timerCountdown
   } from './timerSlice'
@@ -13,6 +11,7 @@ const TimerButtonContainer = styled.div`
     align-items: center;
     justify-content: center;
 `
+
 const TimerButton = styled.button`
     margin: 1rem;
     padding: .5rem;
@@ -28,6 +27,8 @@ const TimerButton = styled.button`
         background-color: lightgray;
     }
 `
+
+
 const TimerContainer = styled.div`
     font-size: x-large;
     color: #0089aa;
@@ -40,15 +41,12 @@ const Timer = () => {
 
     return (
         <TimerButtonContainer>
-            <TimerButton onClick={() => dispatch(increment())}>
-                +
+            <TimerButton onClick={() => dispatch(timerCountdown())} >
+                Start
             </TimerButton>
-            <TimerContainer>
+            <TimerContainer >
                 <span>{timeRemaining}</span>
             </TimerContainer>
-            <TimerButton onClick={() => dispatch(decrement())}>
-                -
-            </TimerButton>
         </TimerButtonContainer>
     )
 };
