@@ -1,7 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-
-
 export const timerSlice = createSlice({
     name: 'timer',
     initialState: {
@@ -9,9 +7,7 @@ export const timerSlice = createSlice({
     },
     reducers: {
         timerCountdown: (state) => {
-            setInterval(() => {
-                state.value -= 1
-            }, 1000);
+            state.value -= 1
         }
     }
 });
