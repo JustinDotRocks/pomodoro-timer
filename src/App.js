@@ -5,19 +5,14 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-
-import CountdownTimer from './components/TimerSettings';
 import Navbar from './components/navbar/Navbar';
 import Counter from './components/counter/Counter';
+import Timer from './components/timer/Timer';
 
 const Main = styled.div`
   height: 100vh;
   width: 100vw;
-`
-
-const CountdownTimerContainer = styled.div`
-  font-size: 2.5rem;
-`
+`;
 
 function App() {
   return (
@@ -32,9 +27,14 @@ function App() {
               <h1>
                 Settings
               </h1>
-              <CountdownTimerContainer>
-                <CountdownTimer />
-              </CountdownTimerContainer>
+            </Main>
+          </Route>
+          <Route path="/counter">
+            <Main>
+              <h1>
+                Counter
+              </h1>
+              <Counter />
             </Main>
           </Route>
           <Route path="/">
@@ -42,7 +42,7 @@ function App() {
               <h1>
                 Pomodoro Timer
               </h1>
-              <Counter />
+              <Timer />
             </Main>
           </Route>
         </Switch>
