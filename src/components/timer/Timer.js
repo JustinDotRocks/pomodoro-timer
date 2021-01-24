@@ -39,9 +39,8 @@ const Timer = () => {
         }, 1000)
     }
     const stop = () => {
-        clearInterval(() => {
-            dispatch(timerStop())
-        })
+        clearInterval(tick)
+        dispatch(timerStop())
     }
     
     return (

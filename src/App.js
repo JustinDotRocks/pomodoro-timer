@@ -8,6 +8,9 @@ import {
 import Navbar from './components/navbar/Navbar';
 import Counter from './components/counter/Counter';
 import Timer from './components/timer/Timer';
+import PostsList from './components/posts/PostsList';
+import AddPostForm from './components/posts/AddPostForm';
+import SinglePostPage from './components/posts/SinglePostPage';
 
 const Main = styled.div`
   height: 100vh;
@@ -24,24 +27,26 @@ function App() {
         <Switch>
           <Route path="/settings">
             <Main>
-              <h1>
-                Settings
-              </h1>
+            </Main>
+          </Route>
+          <Route exact path="/posts/:postId" >
+            <Main>
+              <SinglePostPage />
+            </Main>
+          </Route>
+          <Route path="/posts">
+            <Main>
+              <AddPostForm />
+              <PostsList />
             </Main>
           </Route>
           <Route path="/counter">
             <Main>
-              <h1>
-                Counter
-              </h1>
               <Counter />
             </Main>
           </Route>
           <Route path="/">
             <Main>
-              <h1>
-                Pomodoro Timer
-              </h1>
               <Timer />
             </Main>
           </Route>
