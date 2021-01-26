@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterSlice from '../components/counter/counterSlice';
-import timerSlice from '../components/timer/timerSlice';
+import counterReducer from '../components/counter/counterSlice';
+import timerReducer from '../components/timer/timerSlice';
+import postsReducer from '../components/posts/postsSlice';
 
 export default configureStore({
   reducer: {
-    counter: counterSlice,
-    timer: timerSlice
+    counter: counterReducer,
+    timer: timerReducer,
+    posts: postsReducer
   }
 });
