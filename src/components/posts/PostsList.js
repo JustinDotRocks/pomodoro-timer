@@ -1,12 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-
-
-const PostsContainer = styled.div`
-
-`;
 
 const PostsList = () => {
     const posts = useSelector(state => state.posts)
@@ -20,10 +14,10 @@ const PostsList = () => {
     ))
 
     return (
-        <PostsContainer>
-            Posts
+        <section>
+            <h2>Posts</h2>
             {renderedPosts}
-        </PostsContainer>
+        </section>
     )
 };
 

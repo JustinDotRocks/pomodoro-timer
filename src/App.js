@@ -29,11 +29,7 @@ function App() {
             <Main>
             </Main>
           </Route>
-          <Route exact path="/posts/:postId" >
-            <Main>
-              <SinglePostPage />
-            </Main>
-          </Route>
+          <Route exact path="/posts/:postId" component={SinglePostPage}/>
           <Route path="/posts">
             <Main>
               <AddPostForm />

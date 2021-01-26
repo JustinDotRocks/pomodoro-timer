@@ -38,9 +38,6 @@ const Navbar = () => {
           <Link to="/posts">Posts</Link>
         </NavItem>
         <NavItem>
-          <Link to="/post">Single Post</Link>
-        </NavItem>
-        <NavItem>
           <Link to="/settings">Settings</Link>
         </NavItem>
       </NavItemsList>

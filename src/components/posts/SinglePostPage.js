@@ -1,10 +1,11 @@
 import React from 'react';
 //import styled from 'styled-components';
 import { useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 
-const SinglePostPage = (match) => {
-
-    const postId  = match.params
+const SinglePostPage = ( { match } ) => {
+    
+    const { postId }  = match.params
 
     const post = useSelector(state => 
         state.posts.find(post => post.id === postId)
@@ -27,5 +28,9 @@ const SinglePostPage = (match) => {
         </section>
     )
 };
+
+SinglePostPage.propTypes = {
+    match: PropTypes.string
+}
 
 export default SinglePostPage;
